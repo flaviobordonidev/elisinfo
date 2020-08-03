@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'mockups#bactosense_home'
+  root 'pages#home'
 
   devise_for :users, path_names: {sign_in: 'login'}, path: '', controllers: { sessions: 'users/sessions' }
   resources :users
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get 'mockups/s1p3_company_new'
   get 'mockups/s1p4_company_index'
   get 'mockups/s1p5_company_person_index'
+  get 'pages/home'
   get 'users/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -21,6 +21,8 @@ require("@rails/actiontext")
 
 require("bootstrap")
 
+import "@fortawesome/fontawesome-free/js/all";
+
 //Stylesheets
 require("../stylesheets/application.scss")
 
