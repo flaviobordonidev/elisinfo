@@ -320,6 +320,7 @@ it:
       dismiss: "Rimuovi"
       find: "Cerca..."
       more_used_items: "Le voci più usate"
+      no_user_logged: "Nessun utente loggato"
 
   users:
     index:

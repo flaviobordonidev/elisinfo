@@ -23,7 +23,7 @@
                   <!--<a href="#">Flavio Bordoni</a><i class="fas fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>-->
                   <a href="#" data-toggle="dropdown">
                     <%#= current_user.present? == true ? current_user.name : "nessun utente loggato" %>
-                    <%= current_user.present? == true ? current_user.name_shown : t("pages.home.no_user_logged") %>
+                    <%= current_user.name_shown %>
                   </a>
                   <!-- start sub menu -->
                   <div class="menu-back-div dropdown-menu megamenu-content mega-menu collapse mega-menu-full">
@@ -61,13 +61,7 @@
                           <!-- start sub menu item  -->
                           <ul>
                               <li class="dropdown-header">Account</li>
-                              <li>
-                                <% if current_user.present? %>
-                                  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-                                <% else %>
-                                  <%= link_to "Login", new_user_session_path %>
-                                <% end %>
-                              </li>
+                              <li><a href="home-creative-studio.html">Logout</a></li>
                           </ul>
                           <!-- end sub menu item  -->
                       </li>

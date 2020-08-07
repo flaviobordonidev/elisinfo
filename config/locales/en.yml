@@ -320,6 +320,7 @@ en:
       dismiss: "Dismiss"
       find: "Find..."
       more_used_items: "The more used items"
+      no_user_logged: "No user logged in"
       
   users:
     index:
