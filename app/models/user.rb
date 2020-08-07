@@ -44,4 +44,11 @@ class User < ApplicationRecord
 
   # == Instance Methods =====================================================
 
+  def name_shown
+    if self.present? == true
+      return self.name.blank? ? self.email.split('@')[0].capitalize : self.name
+    else
+      return "nessun utente loggato"
+    end
+  end
 end

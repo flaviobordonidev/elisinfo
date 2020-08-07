@@ -305,6 +305,22 @@ en:
       first_paragraph: "the text showed here is passed via a 'translation file' and this means that our application is ready to support more languages."
       link_to_page_B: "Let's go to page B."
 
+  pages:
+    home:
+      last_access: "Last Access"
+      role: "Role"
+      italian: "Italian"
+      english: "English"
+      select_item: "Select item..."
+      company: "Company"
+      person: "Person"
+      previous: "Prev."
+      of: "of"
+      next: "Next"
+      dismiss: "Dismiss"
+      find: "Find..."
+      more_used_items: "The more used items"
+      
   users:
     index:
       html_head_title: "All users"

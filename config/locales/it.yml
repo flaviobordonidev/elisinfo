@@ -305,6 +305,22 @@ it:
       first_paragraph: "il testo mostrato è o passato da un 'file di traduzione' e questo significa che la nostra applicazione è pronta a supportare più lingue."
       link_to_page_B: "Andiamo alla pagina B"
 
+  pages:
+    home:
+      last_access: "Ultimo Accesso"
+      role: "Ruolo"
+      italian: "Italiano"
+      english: "Inglese"
+      select_item: "Seleziona voce..."
+      company: "Azienda"
+      person: "Persona"
+      previous: "Prec."
+      of: "di"
+      next: "Pros."
+      dismiss: "Rimuovi"
+      find: "Cerca..."
+      more_used_items: "Le voci più usate"
+
   users:
     index:
       html_head_title: "Tutti gli utenti"
