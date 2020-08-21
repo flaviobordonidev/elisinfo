@@ -292,6 +292,7 @@ it:
     index:
       html_head_title: "Tutti gli articoli"
     show:
+      welcome: "Benvenuto, %{name}"
       html_head_title: "Art."
       price_fomatted: "Questo costa %{price} di soldini"
     edit:
@@ -307,6 +308,7 @@ it:
 
   pages:
     home:
+      html_head_title: "pagina home"
       last_access: "Ultimo Accesso"
       role: "Ruolo"
       italian: "Italiano"
@@ -333,3 +335,8 @@ it:
       notice: "L'utente è stato creato con successo."
     update:
       notice: "L'utente è stato aggiornato con successo."
+
+  # Here various generic words
+  vocabolary:
+    ball: "palla"
+    dog: "cane"

@@ -7,6 +7,12 @@
 
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <%= t(".welcome", name: "Flavio") %>
+  <%= t(".welcome", name: current_user.name) %>
+</p>
+
 <p>
   <strong>Meta title:</strong>
   <%= @eg_post.meta_title %>

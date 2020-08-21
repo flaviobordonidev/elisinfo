@@ -292,6 +292,7 @@ en:
     index:
       html_head_title: "All the posts"
     show:
+      welcome: "Welcome, %{name}"
       html_head_title: "Art."
       price_fomatted: "This cost %{price} of money"
     edit:
@@ -307,6 +308,7 @@ en:
 
   pages:
     home:
+      html_head_title: "homepage"
       last_access: "Last Access"
       role: "Role"
       italian: "Italian"
