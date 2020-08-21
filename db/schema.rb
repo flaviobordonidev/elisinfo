@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_173303) do
+ActiveRecord::Schema.define(version: 2020_08_21_150415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,20 @@ ActiveRecord::Schema.define(version: 2020_02_18_173303) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.bigint "todo_list_id", null: false
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["todo_list_id"], name: "index_tasks_on_todo_list_id"
+  end
+
+  create_table "todo_lists", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
@@ -127,4 +141,5 @@ ActiveRecord::Schema.define(version: 2020_02_18_173303) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "eg_components", "eg_companies"
   add_foreign_key "eg_posts", "users"
+  add_foreign_key "tasks", "todo_lists"
 end

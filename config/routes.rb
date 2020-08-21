@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :todo_lists
   root 'pages#home'
 
   devise_for :users, path_names: {sign_in: 'login'}, path: '', controllers: { sessions: 'users/sessions' }

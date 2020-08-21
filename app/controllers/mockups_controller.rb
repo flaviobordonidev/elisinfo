@@ -4,6 +4,7 @@ class MockupsController < ApplicationController
   end
 
   def page_b
+    render layout: 'mockup'
   end
   
   def login

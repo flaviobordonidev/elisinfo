@@ -30,3 +30,4 @@ require("../stylesheets/application.scss")
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
 })
+import "controllers"
