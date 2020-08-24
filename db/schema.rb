@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_081726) do
+ActiveRecord::Schema.define(version: 2020_08_24_084144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,12 +54,21 @@ ActiveRecord::Schema.define(version: 2020_08_24_081726) do
     t.integer "client_rate"
     t.integer "supplier_type"
     t.integer "supplier_rate"
-    t.text "note"
-    t.string "sector"
     t.string "tax_number_1"
     t.string "tax_number_2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "company_translations", force: :cascade do |t|
+    t.bigint "company_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "note"
+    t.string "sector"
+    t.index ["company_id"], name: "index_company_translations_on_company_id"
+    t.index ["locale"], name: "index_company_translations_on_locale"
   end
 
   create_table "eg_companies", force: :cascade do |t|
