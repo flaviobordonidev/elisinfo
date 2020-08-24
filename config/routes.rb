@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :companies
   resources :todo_lists
   root 'pages#home'
 

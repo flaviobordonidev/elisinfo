@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  building: MyString
+  address: MyString
+  client_type: 1
+  client_rate: 1
+  supplier_type: 1
+  supplier_rate: 1
+  note: MyText
+  sector: MyString
+  tax_number_1: MyString
+  tax_number_2: MyString
+
+two:
+  name: MyString
+  building: MyString
+  address: MyString
+  client_type: 1
+  client_rate: 1
+  supplier_type: 1
+  supplier_rate: 1
+  note: MyText
+  sector: MyString
+  tax_number_1: MyString
+  tax_number_2: MyString
