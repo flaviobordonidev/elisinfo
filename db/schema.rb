@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_084144) do
+ActiveRecord::Schema.define(version: 2020_08_25_090544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,14 +50,16 @@ ActiveRecord::Schema.define(version: 2020_08_24_084144) do
     t.string "name"
     t.string "building"
     t.string "address"
-    t.integer "client_type"
+    t.integer "client_type", default: 0
     t.integer "client_rate"
-    t.integer "supplier_type"
+    t.integer "supplier_type", default: 0
     t.integer "supplier_rate"
     t.string "tax_number_1"
     t.string "tax_number_2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_type"], name: "index_companies_on_client_type"
+    t.index ["supplier_type"], name: "index_companies_on_supplier_type"
   end
 
   create_table "company_translations", force: :cascade do |t|
@@ -141,6 +143,16 @@ ActiveRecord::Schema.define(version: 2020_08_24_084144) do
     t.index ["todo_list_id"], name: "index_tasks_on_todo_list_id"
   end
 
+  create_table "telephones", force: :cascade do |t|
+    t.bigint "company_id", null: false
+    t.string "name"
+    t.string "prefix"
+    t.string "number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_telephones_on_company_id"
+  end
+
   create_table "todo_lists", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -167,4 +179,5 @@ ActiveRecord::Schema.define(version: 2020_08_24_084144) do
   add_foreign_key "eg_components", "eg_companies"
   add_foreign_key "eg_posts", "users"
   add_foreign_key "tasks", "todo_lists"
+  add_foreign_key "telephones", "companies"
 end

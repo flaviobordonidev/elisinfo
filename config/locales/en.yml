@@ -21,14 +21,37 @@ en:
             password_confirmation:
               confirmation: ": does not match with password"
     attributes:
+      company:
+        address: "Address"
+        building: "Building"
+        client_rate: "Client rate"
+        client_type: "client's typology"
+        name: "Name"
+        note: "Note"
+        tax_number_1: "VAT number"
+        tax_number_2: "taxation id number"
+        sector: "Sector"
+        supplier_rate: "Supplier rate"
+        supplier_type: "Supplier's typology"
+      company/client_type:
+        c_none: "none" 
+        c_goods: "goods" 
+        c_services: "services"
+        c_goods_and_services: "goods and services"
+      company/supplier_type:
+        s_none: "none" 
+        s_goods: "goods" 
+        s_services: "services"
+        s_goods_and_services: "goods and services"
       user:
         name: "User name" # fallback for when label is nil
         email: "email"
         password: "password"
         password_confirmation: "Password confirmation"
     models:
-      user: "user"
+      company: "company"
       eg_company: "example company"
+      user: "user"
 
   form_errors_message:
     one: "1 error prevented saving"

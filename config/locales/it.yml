@@ -21,14 +21,38 @@ it:
             password_confirmation:
               confirmation: ": non corrisponde con password"
     attributes:
+      company:
+        address: "Indirizzo"
+        building: "Edificio"
+        client_rate: "Classifica cliente"
+        client_type: "Tipologia cliente"
+        name: "Nome"
+        note: "Nota"
+        tax_number_1: "P.IVA."
+        tax_number_2: "C.F."
+        sector: "Settore"
+        supplier_rate: "Classifica fornitore"
+        supplier_type: "Tipologia fornitore"
+      company/client_type:
+        c_none: "nessuno" 
+        c_goods: "beni" 
+        c_services: "servizi"
+        c_goods_and_services: "beni e servizi"
+      company/supplier_type:
+        s_none: "nessuno" 
+        s_goods: "beni" 
+        s_services: "servizi"
+        s_goods_and_services: "beni e servizi"
       user:
         name: "Nome utente" # fallback for when label is nil
         email: "email"
         password: "password"
         password_confirmation: "conferma password"
+
     models:
       user: "utente"
       eg_company: "azienda esempio"
+      company: "azienda"
 
   form_errors_message:
     one: "1 errore ha impedito il salvataggio"
