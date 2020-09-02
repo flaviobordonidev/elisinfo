@@ -15,7 +15,11 @@ class Company < ApplicationRecord
   
   # == Relationships ========================================================
 
-  has_many :telephones, dependent: :destroy
+  # has_many :telephones, dependent: :destroy
+  # accepts_nested_attributes_for :telephones, allow_destroy: true, reject_if: proc{ |attr| attr['number'].blank? }
+  
+  ## polymorphic and nested forms
+  has_many :telephones, dependent: :destroy, as: :telephoneable
   accepts_nested_attributes_for :telephones, allow_destroy: true, reject_if: proc{ |attr| attr['number'].blank? }
 
   # == Validations ==========================================================

@@ -8,7 +8,8 @@ class Telephone < ApplicationRecord
 
   # == Relationships ========================================================
 
-  belongs_to :company
+  ## polymorphic
+  belongs_to :telephoneable, polymorphic: true
 
   # == Validations ==========================================================
 
