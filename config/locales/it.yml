@@ -43,6 +43,12 @@ it:
         s_goods: "beni" 
         s_services: "servizi"
         s_goods_and_services: "beni e servizi"
+      person:
+        title: "Titolo"
+        first_name: "Nome"
+        last_name: "Cognome"
+        homonym: "Omonimia"
+        note: "Note"
       user:
         name: "Nome utente" # fallback for when label is nil
         email: "email"

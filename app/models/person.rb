@@ -11,6 +11,10 @@ class Person < ApplicationRecord
 
   # == Relationships ========================================================
 
+  ## nested-forms + polymorphic
+  has_many :telephones, dependent: :destroy, as: :telephoneable
+  accepts_nested_attributes_for :telephones, allow_destroy: true, reject_if: proc{ |attr| attr['number'].blank? }
+
   # == Validations ==========================================================
 
   # == Scopes ===============================================================

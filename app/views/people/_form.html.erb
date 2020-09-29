@@ -36,7 +36,32 @@
     <%= form.text_area :note %>
   </div>
 
+  <div data-controller="nested-form">
+    <!-- Creiamo nuovo Record -->
+    <template data-target="nested-form.template">
+      <%= form.fields_for :telephones, Telephone.new, child_index: "TEMPLATE_RECORD" do |telephone| %>
+        <%= render "telephone_fields", form: telephone %>
+      <% end %>
+    </template>
+
+    <!-- Visualizziamo i Records esistenti -->
+    <%= form.fields_for :telephones do |telephone| %>
+      <%= render "telephone_fields", form: telephone %>
+    <% end %>
+    
+    <!-- Il pulsante per aggiungere i tasks -->
+    <div data-target="nested-form.add_item">
+        <%= link_to "Add Telephone", "#", data: { action: "nested-form#add_association" } %>
+        <%#= link_to "Add Telephone", "#", 'data-action': "nested-form#add_association" %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<div data-controller="hello" class="field">
+  <input data-target="hello.name" type="text">
+  <button data-action="click->hello#log">Log</button>
+</div>
