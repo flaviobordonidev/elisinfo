@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   get 'mockups/s1p3_company_new'
   get 'mockups/s1p4_company_index'
   get 'mockups/s1p5_company_person_index'
+  get 'mockups/s2p2_people_index'
+  get 'mockups/s2p3_people_new'
   get 'pages/home'
   get 'users/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

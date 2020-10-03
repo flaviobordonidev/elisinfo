@@ -55,4 +55,18 @@ class MockupsController < ApplicationController
   def s1p5_company_person_index
     render layout: 'mockup'
   end
+
+
+  # Story 2: inseriamo nuova persona non legata a nessuna azienda
+
+  # Story 2 - Page 2
+  def s2p2_people_index
+    render layout: 'mockup'
+  end
+
+  # Story 2 - Page 3
+  def s2p3_people_new
+    render layout: 'mockup'
+  end
+
 end
