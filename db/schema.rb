@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_081551) do
+ActiveRecord::Schema.define(version: 2020_10_13_090057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,10 +62,19 @@ ActiveRecord::Schema.define(version: 2020_10_13_081551) do
     t.index ["supplier_type"], name: "index_companies_on_supplier_type"
   end
 
+  create_table "company_person_map_translations", force: :cascade do |t|
+    t.bigint "company_person_map_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "summary"
+    t.index ["company_person_map_id"], name: "index_company_person_map_translations_on_company_person_map_id"
+    t.index ["locale"], name: "index_company_person_map_translations_on_locale"
+  end
+
   create_table "company_person_maps", force: :cascade do |t|
     t.bigint "company_id", null: false
     t.bigint "person_id", null: false
-    t.string "summary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_company_person_maps_on_company_id"
