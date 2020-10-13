@@ -10,6 +10,7 @@ class CompanyPersonMap < ApplicationRecord
 
   # == Relationships ========================================================
 
+  ## many-to-many
   belongs_to :company
   belongs_to :person
 

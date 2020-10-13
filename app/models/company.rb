@@ -21,6 +21,11 @@ class Company < ApplicationRecord
 
   has_many :emails, dependent: :destroy, as: :emailable
   accepts_nested_attributes_for :emails, allow_destroy: true, reject_if: proc{ |attr| attr['address'].blank? }
+
+  ## many-to-many
+  has_many :company_person_maps
+  has_many :people, :through => :company_person_maps
+  accepts_nested_attributes_for :people
   
   # == Validations ==========================================================
 
