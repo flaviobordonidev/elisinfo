@@ -1,0 +1,32 @@
+<%= form_with(model: company_person_map, local: true) do |form| %>
+  <% if company_person_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company_person_map.errors.count, "error") %> prohibited this company_person_map from being saved:</h2>
+
+      <ul>
+        <% company_person_map.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :company_id %>
+    <%= form.text_field :company_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :person_id %>
+    <%= form.text_field :person_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :summary %>
+    <%= form.text_field :summary %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

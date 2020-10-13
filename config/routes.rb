@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :company_person_maps
   resources :people
   resources :companies
   resources :todo_lists
