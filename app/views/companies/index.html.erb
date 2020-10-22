@@ -8,7 +8,7 @@
             </div>
           </div>
         </div>
-        <form id="project-contact-form" action="project-contact.php" method="post">
+        <!--<form id="project-contact-form" action="project-contact.php" method="post">-->
           <div class="row">
 
             <div class="col-12 col-sm-auto">
@@ -32,7 +32,21 @@
 
             </div>
             <div class="col-12 col-sm">
-              <input type="text" name="find_company" id="find_company" placeholder="Cerca azienda..." class="medium-input">
+              <!--<input type="text" name="find_company" id="find_company" placeholder="Cerca azienda..." class="medium-input">-->
+
+              <%= form_with url: "", method: "get", local:true, role: "search", class: 'bottom-pad' do %>
+              
+                <div class="input-group left-pad">
+                  <%= text_field_tag :search, params[:search], class: "form-control", placeholder: t(".form_search_placeholder") %>
+                  <div class="input-group-btn right-pad">
+                    <%= content_tag :button, type: "submit", class: "btn btn-primary" do %>
+                      <span class= "glyphicon glyphicon-search"></span>CERCAME
+                    <% end %>      
+                  </div><!-- /input-group-btn -->
+                </div><!-- /input-group -->
+              
+              <% end %>
+
             </div>
           </div>
           <div class="row">
@@ -67,7 +81,7 @@
               <button id="project-contact-us-button" type="submit" class="btn btn-transparent-dark-gray btn-large margin-20px-top">Search</button>
             </div>
           </div>
-        </form>
+        <!--</form>-->
       </div>
     </section>
     <!-- end form header section -->

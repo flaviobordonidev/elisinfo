@@ -31,6 +31,9 @@ class Company < ApplicationRecord
 
   # == Scopes ===============================================================
 
+  #scope :search, -> (query) {with_translations(I18n.locale).where("name ILIKE ?", "%#{query.strip}%")}
+  scope :search, -> (query) {with_translations.where("name ILIKE ?", "%#{query.strip}%")}
+
   # == Callbacks ============================================================
 
   # == Class Methods ========================================================

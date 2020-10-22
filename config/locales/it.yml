@@ -296,6 +296,11 @@ it:
     pm: pm
 
   # Controllers ----------------------------------------------------------------
+
+  companies:
+    index:
+      html_head_title: "Tutte le aziende"
+      form_search_placeholder: "cerca azienda..."
   
   eg_companies:
     index:

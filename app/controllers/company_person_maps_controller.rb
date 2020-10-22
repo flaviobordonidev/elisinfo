@@ -4,7 +4,8 @@ class CompanyPersonMapsController < ApplicationController
   # GET /company_person_maps
   # GET /company_person_maps.json
   def index
-    @company_person_maps = CompanyPersonMap.all
+    @companies = Company.all
+    #@company_person_maps = CompanyPersonMap.all
   end
 
   # GET /company_person_maps/1
