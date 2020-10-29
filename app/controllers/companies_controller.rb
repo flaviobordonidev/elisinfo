@@ -6,8 +6,9 @@ class CompaniesController < ApplicationController
   def index
     params[:search] = "" if params[:search].blank?
     #@companies = Company.all
-    @companies = Company.search(params[:search])
+    #@companies = Company.search(params[:search])
     #@companies = Company.search(params[:search]).order('created_at DESC').page(params[:page])
+    @pagy, @companies = pagy(Company.search(params[:search]).order(created_at: "DESC"), items: 2)
   end
 
   # GET /companies/1

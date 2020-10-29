@@ -4,7 +4,14 @@ class CompanyPersonMapsController < ApplicationController
   # GET /company_person_maps
   # GET /company_person_maps.json
   def index
-    @companies = Company.all
+    #@companies = Company.all
+    params[:search_master] = "" if params[:search_master].blank?
+    params[:search_nested] = "" if params[:search_nested].blank?
+    if params[:search_nested] == ""
+      @companies = Company.search(params[:search_master])
+    else
+      @companies = Company.search(params[:search_master]).joins(:people).merge(Person.search(params[:search_nested]))
+    end
     #@company_person_maps = CompanyPersonMap.all
   end
 

@@ -1,76 +1,76 @@
-    <!-- start form header section -->
-    <section class="wow fadeIn padding-one-all" id="start-your-project">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-7 text-center margin-100px-bottom sm-margin-40px-bottom">
-            <div class="position-relative overflow-hidden w-100">
-              <!--<span class="text-small text-outside-line-full alt-font font-weight-600 text-uppercase">Contact Form Style 01</span>-->
-            </div>
+<!-- start form header section -->
+<section class="wow fadeIn padding-one-all" id="start-your-project">
+  <div class="container">
+
+
+    <!--<form id="project-contact-form" action="project-contact.php" method="post">-->
+      <div class="row">
+
+        <div class="col-12 col-sm-auto">
+          <a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom popup-with-zoom-anim wow fadeInUp" data-wow-delay="0.6s" href="#modal-popup-level1"><%= image_tag "elis/icons/person.png", alt: "person" %> Persona &nbsp&nbsp&nbsp&nbsp</a>
+          <!-- start modal pop-up level1 -->
+          <div id="modal-popup-level1" class="zoom-anim-dialog mfp-hide col-xl-3 col-lg-6 col-md-7 col-11 mx-auto bg-white text-center modal-popup-main padding-50px-all">
+            <input type="text" name="first_name" id="first_name" placeholder="Cerca ..." class="medium-input">
+            <!--<a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom" data-wow-delay="0.6s" href="#"><%#= image_tag "elis/icons/person.png", alt: "person" %> Persona &nbsp&nbsp&nbsp&nbsp</a>-->
+            <%= link_to mockups_s1p2_company_index_path, class: "btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom", 'data-wow-delay': "0.6s" do %>
+              <%= image_tag "elis/icons/company.png", alt: "company" %> Azienda &nbsp&nbsp&nbsp&nbsp
+            <% end %>
+            <a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom" data-wow-delay="0.6s" href="#"><%= image_tag "elis/icons/person.png", alt: "person" %> Persona &nbsp&nbsp&nbsp&nbsp</a>
+            <p class="margin-four">
+            <a href="#"><i class="fas fa-long-arrow-alt-left margin-5px-right d-none d-md-inline-block"></i> Prev</a>
+            1 di 1
+            <a href="#">Next <i class="fas fa-long-arrow-alt-right margin-5px-left d-none d-md-inline-block"></i></a>
+            </p>
+            <a class="btn btn-medium btn-rounded btn-dark-gray popup-modal-dismiss" href="#">Dismiss</a>
           </div>
+          <!-- end modal pop-up -->
+
         </div>
-        <form id="project-contact-form" action="project-contact.php" method="post">
-          <div class="row">
-
-            <div class="col-12 col-sm-auto">
-              <a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom popup-with-zoom-anim wow fadeInUp" data-wow-delay="0.6s" href="#modal-popup-level1"><%= image_tag "elis/icons/person.png", alt: "person" %> Persona &nbsp&nbsp&nbsp&nbsp</a>
-              <!-- start modal pop-up level1 -->
-              <div id="modal-popup-level1" class="zoom-anim-dialog mfp-hide col-xl-3 col-lg-6 col-md-7 col-11 mx-auto bg-white text-center modal-popup-main padding-50px-all">
-                <input type="text" name="first_name" id="first_name" placeholder="Cerca ..." class="medium-input">
-                <!--<a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom" data-wow-delay="0.6s" href="#"><%#= image_tag "elis/icons/person.png", alt: "person" %> Persona &nbsp&nbsp&nbsp&nbsp</a>-->
-                <%= link_to mockups_s1p2_company_index_path, class: "btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom", 'data-wow-delay': "0.6s" do %>
-                  <%= image_tag "elis/icons/company.png", alt: "company" %> Azienda &nbsp&nbsp&nbsp&nbsp
-                <% end %>
-                <a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom" data-wow-delay="0.6s" href="#"><%= image_tag "elis/icons/person.png", alt: "person" %> Persona &nbsp&nbsp&nbsp&nbsp</a>
-                <p class="margin-four">
-                <a href="#"><i class="fas fa-long-arrow-alt-left margin-5px-right d-none d-md-inline-block"></i> Prev</a>
-                1 di 1
-                <a href="#">Next <i class="fas fa-long-arrow-alt-right margin-5px-left d-none d-md-inline-block"></i></a>
-                </p>
-                <a class="btn btn-medium btn-rounded btn-dark-gray popup-modal-dismiss" href="#">Dismiss</a>
-              </div>
-              <!-- end modal pop-up -->
-
-            </div>
-            <div class="col-12 col-sm">
-              <input type="text" name="find_person" id="find_person" placeholder="Cerca persona..." class="medium-input">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-12 col-sm-auto">
-
-              <!--<a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom" data-wow-delay="0.6s" href="#"> Secondo livello &nbsp&nbsp&nbsp&nbsp</a>-->
-              <%= image_tag "elis/icons/arrow_right_nested.png", alt: "arrow_right_nested", class: " margin-10px-bottom margin-5px-right" %><a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom popup-with-zoom-anim wow fadeInUp" data-wow-delay="0.6s" href="#modal-popup-level2">  Secondo livello &nbsp&nbsp&nbsp&nbsp</a>
-              <!-- start modal pop-up -->
-              <div id="modal-popup-level2" class="zoom-anim-dialog mfp-hide col-xl-3 col-lg-6 col-md-7 col-11 mx-auto bg-white text-center modal-popup-main padding-50px-all">
-                <input type="text" name="first_name" id="first_name" placeholder="Cerca ..." class="medium-input">
-                <!--<a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom" data-wow-delay="0.6s" href="#"><%#= image_tag "elis/icons/company.png", alt: "company" %> Azienda &nbsp&nbsp&nbsp&nbsp</a>-->
-                <%= link_to mockups_s1p2_company_index_path, class: "btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom", 'data-wow-delay': "0.6s" do %>
-                  <%= image_tag "elis/icons/company.png", alt: "company" %> Azienda &nbsp&nbsp&nbsp&nbsp
-                <% end %>
-                <a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom" data-wow-delay="0.6s" href="#"><%= image_tag "elis/icons/person.png", alt: "person" %> Persona &nbsp&nbsp&nbsp&nbsp</a>
-                <p class="margin-four">
-                <a href="#"><i class="fas fa-long-arrow-alt-left margin-5px-right d-none d-md-inline-block"></i> Prev</a>
-                22 di 99
-                <a href="#">Next <i class="fas fa-long-arrow-alt-right margin-5px-left d-none d-md-inline-block"></i></a>
-                </p>
-                <a class="btn btn-medium btn-rounded btn-dark-gray popup-modal-dismiss" href="#">Dismiss</a>
-              </div>
-              <!-- end modal pop-up -->
-
-            </div>
-            <div class="col-12 col-sm">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 text-center">
-              <button id="project-contact-us-button" type="submit" class="btn btn-transparent-dark-gray btn-large margin-20px-top">Search</button>
-            </div>
-          </div>
-        </form>
+        <div class="col-12 col-sm">
+          <!--<input type="text" name="find_person" id="find_person" placeholder="Cerca persona..." class="medium-input">-->
+          <%= form_with(url: "", method: "get", local:true) do %>
+            <%= text_field_tag :search, params[:search], class: "medium-input", placeholder: "Cerca persona..." %>
+            <%= submit_tag "Cerca" %>
+          <% end %>
+        </div>
       </div>
-    </section>
-    <!-- end form header section -->
+
+      <div class="row">
+        <div class="col-12 col-sm-auto">
+
+          <!--<a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom" data-wow-delay="0.6s" href="#"> Secondo livello &nbsp&nbsp&nbsp&nbsp</a>-->
+          <%= image_tag "elis/icons/arrow_right_nested.png", alt: "arrow_right_nested", class: " margin-10px-bottom margin-5px-right" %><a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom popup-with-zoom-anim wow fadeInUp" data-wow-delay="0.6s" href="#modal-popup-level2">  Secondo livello &nbsp&nbsp&nbsp&nbsp</a>
+          <!-- start modal pop-up -->
+          <div id="modal-popup-level2" class="zoom-anim-dialog mfp-hide col-xl-3 col-lg-6 col-md-7 col-11 mx-auto bg-white text-center modal-popup-main padding-50px-all">
+            <input type="text" name="first_name" id="first_name" placeholder="Cerca ..." class="medium-input">
+            <!--<a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom" data-wow-delay="0.6s" href="#"><%#= image_tag "elis/icons/company.png", alt: "company" %> Azienda &nbsp&nbsp&nbsp&nbsp</a>-->
+            <%= link_to mockups_s1p2_company_index_path, class: "btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom", 'data-wow-delay': "0.6s" do %>
+              <%= image_tag "elis/icons/company.png", alt: "company" %> Azienda &nbsp&nbsp&nbsp&nbsp
+            <% end %>
+            <a class="btn btn-medium btn-rounded btn-transparent-dark-gray margin-10px-bottom" data-wow-delay="0.6s" href="#"><%= image_tag "elis/icons/person.png", alt: "person" %> Persona &nbsp&nbsp&nbsp&nbsp</a>
+            <p class="margin-four">
+            <a href="#"><i class="fas fa-long-arrow-alt-left margin-5px-right d-none d-md-inline-block"></i> Prev</a>
+            22 di 99
+            <a href="#">Next <i class="fas fa-long-arrow-alt-right margin-5px-left d-none d-md-inline-block"></i></a>
+            </p>
+            <a class="btn btn-medium btn-rounded btn-dark-gray popup-modal-dismiss" href="#">Dismiss</a>
+          </div>
+          <!-- end modal pop-up -->
+
+        </div>
+        <div class="col-12 col-sm">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <button id="project-contact-us-button" type="submit" class="btn btn-transparent-dark-gray btn-large margin-20px-top">Search</button>
+        </div>
+      </div>
+    <!--</form>-->
+    
+  </div>
+</section>
+<!-- end form header section -->
 
 
     <!-- start people section -->
@@ -89,7 +89,7 @@
                     </div>
                     <div class="padding-40px-left display-table-cell vertical-align-top last-paragraph-no-margin xs-no-padding-left xs-display-block">
                       <%= link_to edit_person_path(person), class: "text-extra-dark-gray text-uppercase alt-font font-weight-600 text-small" do %>
-                        <%= person.first_name %> <%= person.last_name %> - <%= person.id %>
+                        <%= person.title %> <%= person.first_name %> <%= person.last_name %> - <%= person.id %>
                       <% end %>
                       <p><%= person.homonym %></p>
                       <div><%= person.note %></div>
@@ -130,6 +130,11 @@
             </div>
             </div>
           </div>
+          
+                <!-- start pagination -->
+                <%= render 'pagy/nav_pofo', pagy: @pagy %>
+
+          
           <!-- end pagination -->
         </div>
       </div>

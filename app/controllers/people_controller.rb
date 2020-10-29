@@ -4,7 +4,10 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.all
+    #@people = Person.all
+    params[:search] = "" if params[:search].blank?
+    #@people = Person.search(params[:search])
+    @pagy, @people = pagy(Person.search(params[:search]).order(created_at: "DESC"), items: 2)
   end
 
   # GET /people/1
