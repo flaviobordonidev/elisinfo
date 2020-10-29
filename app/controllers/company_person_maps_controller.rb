@@ -8,8 +8,12 @@ class CompanyPersonMapsController < ApplicationController
     params[:search_master] = "" if params[:search_master].blank?
     params[:search_nested] = "" if params[:search_nested].blank?
     if params[:search_nested] == ""
-      @companies = Company.search(params[:search_master])
+      #companiesduplicated = Company.search(params[:search_master])
+      #@companies = companiesduplicated.uniq
+      @companies = Company.search(params[:search_master]).distinct
     else
+      #companiesduplicated = Company.search(params[:search_master]).joins(:people).merge(Person.search(params[:search_nested]))
+      #@companies = companiesduplicated.uniq
       @companies = Company.search(params[:search_master]).joins(:people).merge(Person.search(params[:search_nested]))
     end
     #@company_person_maps = CompanyPersonMap.all

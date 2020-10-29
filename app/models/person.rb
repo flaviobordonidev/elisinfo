@@ -31,7 +31,8 @@ class Person < ApplicationRecord
   #scope :search, -> (query) {with_translations(I18n.locale).where("title ILIKE ? OR last_name ILIKE ? OR first_name ILIKE ?", "%#{query.strip}%", "%#{query.strip}%", "%#{query.strip}%")}
   #scope :search, -> (query) {with_translations.where("title ILIKE ? OR last_name ILIKE ? OR first_name ILIKE ?", "%#{query.strip}%", "%#{query.strip}%", "%#{query.strip}%")}
   #scope :search, -> (query) {with_translations.where("CONCAT_WS(' ', first_name, last_name) ILIKE ?", "%#{query.strip}%")}
-  scope :search, -> (query) {with_translations.where("title || ' ' || first_name || ' ' || last_name ILIKE ?", "%#{query.strip}%")}
+  #scope :search, -> (query) {with_translations.where("title || ' ' || first_name || ' ' || last_name ILIKE ?", "%#{query.strip}%")}
+  scope :search, -> (query) {with_translations(I18n.locale).distinct.where("title || ' ' || first_name || ' ' || last_name ILIKE ?", "%#{query.strip}%")}
 
   # == Callbacks ============================================================
 
