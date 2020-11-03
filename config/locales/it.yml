@@ -1,69 +1,9 @@
 # https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/it.yml
 it:
-  activerecord:
-    errors:
-      messages:
-        record_invalid: 'Validazione fallita: %{errors}'
-        restrict_dependent_destroy:
-          has_one: Il record non può essere cancellato perchè esiste un %{record} dipendente
-          has_many: Il record non può essere cancellato perchè esistono %{record} dipendenti
-      models:
-        user:
-          attributes:
-            name:
-              blank: ": campo obbligatorio"
-            email:
-              blank: ": campo obbligatorio"
-              invalid: ": non valida"
-            password:
-              blank: ": campo obbligatorio"
-              too_short: ": troppo corta"
-            password_confirmation:
-              confirmation: ": non corrisponde con password"
-    attributes:
-      company:
-        name: "Ragione Sociale"
-        building: "Edificio / Dipartimento"
-        address: "Indirizzo"
-        client_type: "Cliente acquista"
-        client_rate: "Punteggio Classifica"
-        supplier_type: "Fornitore fornisce"
-        supplier_rate: "Punteggio Classifica"
-        note: "Note Aggiuntive"
-        tax_number_1: "P.IVA."
-        tax_number_2: "C.F."
-        sector: "Settore"
-      company/client_type:
-        c_none: "nessuno" 
-        c_goods: "beni" 
-        c_services: "servizi"
-        c_goods_and_services: "beni e servizi"
-      company/supplier_type:
-        s_none: "nessuno" 
-        s_goods: "beni" 
-        s_services: "servizi"
-        s_goods_and_services: "beni e servizi"
-      person:
-        title: "Titolo"
-        first_name: "Nome"
-        last_name: "Cognome"
-        homonym: "Omonimia"
-        note: "Note"
-      user:
-        name: "Nome utente" # fallback for when label is nil
-        email: "email"
-        password: "password"
-        password_confirmation: "conferma password"
 
-    models:
-      user: "utente"
-      eg_company: "azienda esempio"
-      company: "azienda"
+  # = start data_types =========================================================
 
-  form_errors_message:
-    one: "1 errore ha impedito il salvataggio"
-    other: "%{count} errori hanno impedito il salvataggio"
-
+  # == date ====================================================================
   date:
     abbr_day_names:
     - dom
@@ -117,6 +57,8 @@ it:
     - :day
     - :month
     - :year
+
+  # == datetime ================================================================
   datetime:
     distance_in_words:
       about_x_hours:
@@ -163,72 +105,8 @@ it:
       day: Giorno
       month: Mese
       year: Anno
-
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: deve essere accettata
-      blank: non può essere lasciato in bianco
-      confirmation: non coincide con %{attribute}
-      empty: non può essere vuoto
-      equal_to: deve essere uguale a %{count}
-      even: deve essere pari
-      exclusion: è riservato
-      greater_than: deve essere maggiore di %{count}
-      greater_than_or_equal_to: deve essere maggiore o uguale a %{count}
-      inclusion: non è compreso tra le opzioni disponibili
-      invalid: non è valido
-      less_than: deve essere minore di %{count}
-      less_than_or_equal_to: deve essere minore o uguale a %{count}
-      model_invalid: 'Validazione fallita: %{errors}'
-      not_a_number: non è un numero
-      not_an_integer: non è un numero intero
-      odd: deve essere dispari
-      other_than: devono essere di numero diverso da %{count}
-      present: deve essere lasciato in bianco
-      required: deve esistere
-      taken: è già presente
-      too_long:
-        one: è troppo lungo (il massimo è 1 carattere)
-        other: è troppo lungo (il massimo è %{count} caratteri)
-      too_short:
-        one: è troppo corto (il minimo è 1 carattere)
-        other: è troppo corto (il minimo è %{count} caratteri)
-      wrong_length:
-        one: è della lunghezza sbagliata (deve essere di 1 carattere)
-        other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
-    template:
-      body: 'Ricontrolla i seguenti campi:'
-      header:
-        one: 'Non posso salvare questo %{model}: 1 errore'
-        other: 'Non posso salvare questo %{model}: %{count} errori.'
-
-  helpers:
-    select:
-      prompt: Seleziona...
-    submit:
-      create: Crea %{model}
-      submit: Invia %{model}
-      update: Aggiorna %{model}
-      # user:
-      #   create: "Crea %{model}"
-      #   update: "Aggiorna %{model}"
-      # eg_company:
-      #   create: "Crea %{model}"
-      #   update: "Aggiorna %{model}"
-    label:
-      user:
-        name: "Nome utente"
-        email: "email"
-        password: "password"
-        password_confirmation: "conferma password"
-    placeholder:
-      user:
-        name: "nome utente"
-        email: "email"
-        password: "password"
-        password_confirmation: "conferma password"
   
+  # == number ==================================================================
   number:
     currency:
       format:
@@ -295,13 +173,156 @@ it:
       short_phrase: "il giorno %d %^B %Y" #customized
     pm: pm
 
-  # Controllers ----------------------------------------------------------------
+  # = end data_types =========================================================
+
+  # == errors ==================================================================
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: deve essere accettata
+      blank: non può essere lasciato in bianco
+      confirmation: non coincide con %{attribute}
+      empty: non può essere vuoto
+      equal_to: deve essere uguale a %{count}
+      even: deve essere pari
+      exclusion: è riservato
+      greater_than: deve essere maggiore di %{count}
+      greater_than_or_equal_to: deve essere maggiore o uguale a %{count}
+      inclusion: non è compreso tra le opzioni disponibili
+      invalid: non è valido
+      less_than: deve essere minore di %{count}
+      less_than_or_equal_to: deve essere minore o uguale a %{count}
+      model_invalid: 'Validazione fallita: %{errors}'
+      not_a_number: non è un numero
+      not_an_integer: non è un numero intero
+      odd: deve essere dispari
+      other_than: devono essere di numero diverso da %{count}
+      present: deve essere lasciato in bianco
+      required: deve esistere
+      taken: è già presente
+      too_long:
+        one: è troppo lungo (il massimo è 1 carattere)
+        other: è troppo lungo (il massimo è %{count} caratteri)
+      too_short:
+        one: è troppo corto (il minimo è 1 carattere)
+        other: è troppo corto (il minimo è %{count} caratteri)
+      wrong_length:
+        one: è della lunghezza sbagliata (deve essere di 1 carattere)
+        other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
+    template:
+      body: 'Ricontrolla i seguenti campi:'
+      header:
+        one: 'Non posso salvare questo %{model}: 1 errore'
+        other: 'Non posso salvare questo %{model}: %{count} errori.'
+
+  # == form_errors_message =====================================================
+  form_errors_message:
+    one: "1 errore ha impedito il salvataggio"
+    other: "%{count} errori hanno impedito il salvataggio"
+
+  # == helpers ==================================================================
+  helpers:
+    select:
+      prompt: Seleziona...
+    submit:
+      create: Crea %{model}
+      submit: Invia %{model}
+      update: Aggiorna %{model}
+      # user:
+      #   create: "Crea %{model}"
+      #   update: "Aggiorna %{model}"
+      # eg_company:
+      #   create: "Crea %{model}"
+      #   update: "Aggiorna %{model}"
+    label:
+      user:
+        name: "Nome utente"
+        email: "email"
+        password: "password"
+        password_confirmation: "conferma password"
+    placeholder:
+      user:
+        name: "nome utente"
+        email: "email"
+        password: "password"
+        password_confirmation: "conferma password"
+
+  # == activerecord ============================================================
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Validazione fallita: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Il record non può essere cancellato perchè esiste un %{record} dipendente
+          has_many: Il record non può essere cancellato perchè esistono %{record} dipendenti
+      models:
+        user:
+          attributes:
+            name:
+              blank: ": campo obbligatorio"
+            email:
+              blank: ": campo obbligatorio"
+              invalid: ": non valida"
+            password:
+              blank: ": campo obbligatorio"
+              too_short: ": troppo corta"
+            password_confirmation:
+              confirmation: ": non corrisponde con password"
+    attributes:
+      company:
+        name: "Ragione Sociale"
+        building: "Edificio / Dipartimento"
+        address: "Indirizzo"
+        client_type: "Cliente acquista"
+        client_rate: "Punteggio Classifica"
+        supplier_type: "Fornitore fornisce"
+        supplier_rate: "Punteggio Classifica"
+        note: "Note Aggiuntive"
+        tax_number_1: "P.IVA."
+        tax_number_2: "C.F."
+        sector: "Settore"
+      company/client_type:
+        c_none: "nessuno" 
+        c_goods: "beni" 
+        c_services: "servizi"
+        c_goods_and_services: "beni e servizi"
+      company/supplier_type:
+        s_none: "nessuno" 
+        s_goods: "beni" 
+        s_services: "servizi"
+        s_goods_and_services: "beni e servizi"
+      person:
+        title: "Titolo"
+        first_name: "Nome"
+        last_name: "Cognome"
+        homonym: "Omonimia"
+        note: "Note"
+      user:
+        name: "Nome utente" # fallback for when label is nil
+        email: "email"
+        password: "password"
+        password_confirmation: "conferma password"
+    models:
+      user: "utente"
+      eg_company: "azienda esempio"
+      company: "azienda"
+
+  # = start views ==============================================================
 
   companies:
     index:
       html_head_title: "Tutte le aziende"
       form_search_placeholder: "cerca azienda..."
-  
+
+  company_person_maps:
+    index:
+      html_head_title: "Aziende -> Persone"
+    form_search:
+      company: "Azienda"
+      person: "Persona"
+      form_search_placeholder: "cerca ..."
+      submit: "trova"
+
   eg_companies:
     index:
       html_head_title: "Tutte le aziende"
@@ -371,7 +392,9 @@ it:
     update:
       notice: "L'utente è stato aggiornato con successo."
 
-  # Here various generic words
+  # = end views ================================================================
+
+  # == Generic Vocablulary =====================================================
   vocabolary:
     ball: "palla"
     dog: "cane"

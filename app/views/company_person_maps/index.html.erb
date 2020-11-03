@@ -1,28 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%# == Meta_data ============================================================ %>
 
-<h1>Company Person Maps</h1>
+<% provide(:html_head_title, "#{t '.html_head_title'}") %>
+<%# provide(:menu_nav_link_home, "active") %>
 
-  <%= form_with(url: "", method: "get", local:true) do %>
-    <%= text_field_tag :search_master, params[:search_master], class: "form-control", placeholder: "cerca..." %>
-    <%= text_field_tag :search_nested, params[:search_nested], class: "form-control", placeholder: "cerca..." %>
-    <%= submit_tag "Cerca" %>
-  <% end %>
+<%# == Meta_data - end ====================================================== %>
 
-    <% @companies.each do |company| %>
-      <p>Company: <%= company.id %> - <%= company.name %></p>
-      <% company.company_person_maps.each do |company_person_map| %>
-        <% if company_person_map.person.title.downcase.include? params[:search_nested].downcase or company_person_map.person.first_name.downcase.include? params[:search_nested].downcase or company_person_map.person.last_name.downcase.include? params[:search_nested].downcase %>
-        <p>
-          <%= company_person_map.person.id %> - <%= "#{company_person_map.person.title} #{company_person_map.person.first_name} #{company_person_map.person.last_name}" %>
-          <%= company_person_map.summary %>
-          <%= link_to 'Show', company_person_map %>
-          <%= link_to 'Edit', edit_company_person_map_path(company_person_map) %>
-          <%= link_to 'Destroy', company_person_map, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </p>
-        <% end %>
-      <% end %>
-    <% end %>
+<%= render 'layouts/navbar' %>
 
-<br>
+<% if params[:master_page] == "companies" %>
+  <%= render 'form_search', label_master: "Azienda", label_nested: "Persona" %>
+  <%= render 'master_company', companies: @companies %>
+<% else %>
+  <%= render 'form_search', label_master: "Persona", label_nested: "Azienda" %>
+  <%= render 'master_people', people: @people %>
+<% end %>
+
+<%= sanitize pagy_nav(@pagy) %>
+
+<br><br>
 
 <%= link_to 'New Company Person Map', new_company_person_map_path %>
+<p id="notice"><%= notice %></p>
+<h1>Company Person Maps</h1>

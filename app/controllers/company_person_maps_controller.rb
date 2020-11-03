@@ -5,18 +5,28 @@ class CompanyPersonMapsController < ApplicationController
   # GET /company_person_maps.json
   def index
     #@companies = Company.all
+    params[:master_page] = "companies" if params[:master_page].blank?
     params[:search_master] = "" if params[:search_master].blank?
     params[:search_nested] = "" if params[:search_nested].blank?
-    if params[:search_nested] == ""
-      #companiesduplicated = Company.search(params[:search_master])
-      #@companies = companiesduplicated.uniq
-      @companies = Company.search(params[:search_master]).distinct
-    else
-      #companiesduplicated = Company.search(params[:search_master]).joins(:people).merge(Person.search(params[:search_nested]))
-      #@companies = companiesduplicated.uniq
-      @companies = Company.search(params[:search_master]).joins(:people).merge(Person.search(params[:search_nested]))
+    if params[:master_page] == "companies"
+      if params[:search_nested] == ""
+        #companiesduplicated = Company.search(params[:search_master])
+        #@companies = companiesduplicated.uniq
+        #@companies = Company.search(params[:search_master]).distinct
+        @pagy, @companies = pagy(Company.search(params[:search_master]).order(created_at: "DESC"), page_param: :page_master, items: 2)
+      else
+        #companiesduplicated = Company.search(params[:search_master]).joins(:people).merge(Person.search(params[:search_nested]))
+        #@companies = companiesduplicated.uniq
+        #@companies = Company.search(params[:search_master]).joins(:people).merge(Person.search(params[:search_nested]))
+        @pagy, @companies = pagy(Company.search(params[:search_master]).order(created_at: "DESC").joins(:people).merge(Person.search(params[:search_nested])), page_param: :page_master, items: 2)
+      end
+    else # l'altra unica alternativa è master_page = people
+      if params[:search_nested] == ""
+        @pagy, @people = pagy(Person.search(params[:search_master]).order(created_at: "DESC"), page_param: :page_master, items: 2)
+      else
+        @pagy, @people = pagy(Person.search(params[:search_master]).order(created_at: "DESC").joins(:companies).merge(Company.search(params[:search_nested])), page_param: :page_master, items: 2)
+      end
     end
-    #@company_person_maps = CompanyPersonMap.all
   end
 
   # GET /company_person_maps/1

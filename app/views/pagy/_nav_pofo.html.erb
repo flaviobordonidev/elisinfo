@@ -18,7 +18,8 @@
       <% end %>
     </div>
     <div class="col-auto">
-      <span class="margin-5px-top d-table d-lg-inline-block">Pagina <%= params[:page] %> ( <%= pagy.page %> ) di <%= pagy.pages %> (totale items = <%= pagy.count %>)</span>
+      <!--<span class="margin-5px-top d-table d-lg-inline-block">Pagina <%#= params[:page] %> ( <%#= pagy.page %> ) di <%#= pagy.pages %> (totale items = <%#= pagy.count %>)</span>-->
+      <span class="margin-5px-top d-table d-lg-inline-block">Pagina <%= pagy.page %> di <%= pagy.pages %></span>
     </div>
     <div class="col-auto">
       <% if pagy.next %>
