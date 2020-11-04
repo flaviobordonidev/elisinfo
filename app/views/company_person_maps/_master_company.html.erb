@@ -49,7 +49,7 @@
                   <div class="display-table width-100">
                     <div class="display-table-cell width-100px xs-width-50px text-center vertical-align-top xs-display-block xs-margin-10px-bottom">
                       <%= link_to new_person_path, class: "btn btn-small btn-transparent-white lg-margin-15px-bottom d-table d-lg-inline-block md-margin-lr-auto" do %>
-                        <%= image_tag "pofo/icon_new.png", class: "img-circle width-85 xs-width-100", alt: "" %>
+                        <%= image_tag "pofo/icon_add.png", class: "img-circle width-85 xs-width-100", alt: "" %>
                       <% end %>
                       <!--<img src="images/avtar-04.jpg" class="img-circle width-85 xs-width-100" alt="" />-->
                     </div>
@@ -62,18 +62,20 @@
             </li>
           <% end %>
 
-          <li> <!-- start new company -->
-            <div class="display-table width-100">
-              <div class="display-table-cell width-100px xs-width-50px text-center vertical-align-top xs-display-block xs-margin-10px-bottom">
-                <%= link_to new_company_path, class: "btn btn-small btn-transparent-white lg-margin-15px-bottom d-table d-lg-inline-block md-margin-lr-auto" do %>
-                  <%= image_tag "pofo/icon_new.png", class: "img-circle width-85 xs-width-100", alt: "" %>
-                <% end %>
-                <!--<img src="images/avtar-04.jpg" class="img-circle width-85 xs-width-100" alt="" />-->
+          <% if @pagy.page == @pagy.last %> <!-- mostra solo se siamo su ultima pagina -->
+            <li> <!-- start new company -->
+              <div class="display-table width-100">
+                <div class="display-table-cell width-100px xs-width-50px text-center vertical-align-top xs-display-block xs-margin-10px-bottom">
+                  <%= link_to new_company_path, class: "btn btn-small btn-transparent-white lg-margin-15px-bottom d-table d-lg-inline-block md-margin-lr-auto" do %>
+                    <%= image_tag "pofo/icon_new.png", class: "img-circle width-85 xs-width-100", alt: "" %>
+                  <% end %>
+                  <!--<img src="images/avtar-04.jpg" class="img-circle width-85 xs-width-100" alt="" />-->
+                </div>
+                <div class="padding-40px-left display-table-cell vertical-align-top last-paragraph-no-margin xs-no-padding-left xs-display-block">
+                </div>
               </div>
-              <div class="padding-40px-left display-table-cell vertical-align-top last-paragraph-no-margin xs-no-padding-left xs-display-block">
-              </div>
-            </div>
-          </li> <!-- end new company -->
+            </li> <!-- end new company -->
+          <% end %>
         </ul> <!-- end list companies -->
         
       </div> <!-- end col -->
