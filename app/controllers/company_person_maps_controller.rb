@@ -41,6 +41,8 @@ class CompanyPersonMapsController < ApplicationController
 
   # GET /company_person_maps/1/edit
   def edit
+    @people = Person.all # Per elenco nel popup
+    @company_person_map.person_id = params[:nested_id] unless params[:nested_id].blank? # Se scelgo persona nel popup 
   end
 
   # POST /company_person_maps
@@ -91,6 +93,7 @@ class CompanyPersonMapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_person_map_params
-      params.require(:company_person_map).permit(:company_id, :person_id, :summary)
+      params.require(:company_person_map).permit(:company_id, :person_id, :summary, person_attributes: [:id, :title, :first_name, :last_name, :homonym, :note, telephones_attributes: [:_destroy, :id, :name, :prefix, :number], emails_attributes: [:_destroy, :id, :name, :address]])
     end
+
 end

@@ -20,7 +20,7 @@ class Person < ApplicationRecord
   accepts_nested_attributes_for :emails, allow_destroy: true, reject_if: proc{ |attr| attr['address'].blank? }
 
   ## many-to-many
-  has_many :company_person_maps
+  has_many :company_person_maps, dependent: :destroy
   has_many :companies, :through => :company_person_maps
   accepts_nested_attributes_for :companies
 

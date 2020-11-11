@@ -9,6 +9,12 @@
     </div>
     <!--<form id="project-contact-form2" action="project-contact.php" method="post">-->
     <%= form_with(model: person, local: true) do |form| %>
+
+      <!-- Manteniamo sull'url alcuni params - start --> 
+      <%= hidden_field_tag(:back_to, params[:back_to]) %><!-- creato per tornare a company_person_maps_edit -->
+      <%= hidden_field_tag(:back_to_id, params[:back_to_id]) %><!-- creato per tornare a company_person_maps_edit -->
+      <!-- Manteniamo sull'url alcuni params - end --> 
+
       <% if person.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>

@@ -13,6 +13,8 @@ class CompanyPersonMap < ApplicationRecord
   ## many-to-many
   belongs_to :company
   belongs_to :person
+  accepts_nested_attributes_for :person
+  #accepts_nested_attributes_for :telephones, allow_destroy: true, reject_if: proc{ |attr| attr['number'].blank? }
 
   # == Validations ==========================================================
 

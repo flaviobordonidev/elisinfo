@@ -43,9 +43,17 @@ class PeopleController < ApplicationController
   # PATCH/PUT /people/1
   # PATCH/PUT /people/1.json
   def update
+    #raise "parametro da hidden_field back_to: #{params[:back_to]}"
+    params[:back_to] = "" if params[:back_to].blank?
     respond_to do |format|
       if @person.update(person_params)
-        format.html { redirect_to @person, notice: 'Person was successfully updated.' }
+        format.html do
+          if params[:back_to] == "company_person_maps_edit"
+            redirect_to edit_company_person_map_path(params[:back_to_id]), notice: 'Person was successfully updated.' 
+          else
+            redirect_to @person, notice: 'Person was successfully updated.' 
+          end
+        end
         format.json { render :show, status: :ok, location: @person }
       else
         format.html { render :edit }
