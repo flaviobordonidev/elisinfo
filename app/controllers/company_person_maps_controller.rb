@@ -93,7 +93,8 @@ class CompanyPersonMapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_person_map_params
-      params.require(:company_person_map).permit(:company_id, :person_id, :summary, person_attributes: [:id, :title, :first_name, :last_name, :homonym, :note, telephones_attributes: [:_destroy, :id, :name, :prefix, :number], emails_attributes: [:_destroy, :id, :name, :address]])
+      #params.require(:company_person_map).permit(:company_id, :person_id, :summary, person_attributes: [:id, :title, :first_name, :last_name, :homonym, :note, telephones_attributes: [:_destroy, :id, :name, :prefix, :number], emails_attributes: [:_destroy, :id, :name, :address]]) OLD3NESTED
+      params.require(:company_person_map).permit(:company_id, :person_id, :summary, telephones_attributes: [:_destroy, :id, :name, :prefix, :number], emails_attributes: [:_destroy, :id, :name, :address])
     end
 
 end

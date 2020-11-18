@@ -30,91 +30,56 @@
     <%= form.text_field :person_id %>
   </div>
 
-<h3>Dati aziendali</h3>
-
   <div class="field">
     <%= form.label :summary %>
     <%= form.text_field :summary %>
   </div>
 
 
-<h3>Dati Personali</h3>
+  <div data-controller="nested-form" class="col-12"> <!-- Nested Form Telephones start -->
+    <%= form.label :telephones %>
 
-  <%= form.fields_for :person do |nested_form| %>
+    <!-- Creiamo nuovo Record -->
+    <template data-target="nested-form.template">
+      <%= form.fields_for :telephones, Telephone.new, child_index: "TEMPLATE_RECORD" do |telephone| %>
+        <%= render "telephone_fields", form: telephone %>
+      <% end %>
+    </template>
 
-    <div class="field">
-      <%= nested_form.label :title %>
-      <%= nested_form.text_field :title, class: "medium-input" %>
+    <!-- Visualizziamo i Records esistenti -->
+    <%= form.fields_for :telephones do |telephone| %>
+      <%= render "telephone_fields", form: telephone %>
+    <% end %>
+
+    <!-- Il pulsante per aggiungere i tasks -->
+    <div data-target="nested-form.add_item">
+        <%= link_to "+ Aggiungi numero di telefono", "#", data: { action: "nested-form#add_association" }, class: "btn btn-transparent-dark-gray btn-medium margin-20px-bottom" %>
+        <%#= link_to "Add Telephone", "#", 'data-action': "nested-form#add_association" %>
     </div>
-    
-    <div class="field">
-      <%= nested_form.label :first_name %>
-      <%= nested_form.text_field :first_name, class: "medium-input" %>
+  </div> <!-- Nested Form Telephones end -->
+
+
+  <div data-controller="nested-form" class="col-12"> <!-- Nested Form Emails start -->
+    <!-- Creiamo nuovo Record -->
+    <template data-target="nested-form.template">
+      <%= form.fields_for :emails, Email.new, child_index: "TEMPLATE_RECORD" do |email| %>
+        <%= render "email_fields", form: email %>
+      <% end %>
+    </template>
+
+    <!-- Visualizziamo i Records esistenti -->
+    <%= form.fields_for :emails do |email| %>
+      <%= render "email_fields", form: email %>
+    <% end %>
+
+    <!-- Il pulsante per aggiungere i tasks -->
+    <div data-target="nested-form.add_item">
+        <%= link_to "+ Aggiungi indirizzo email", "#", data: { action: "nested-form#add_association" }, class: "btn btn-transparent-dark-gray btn-medium margin-20px-bottom" %>
+        <%#= link_to "Add Telephone", "#", 'data-action': "nested-form#add_association" %>
     </div>
-  
-    <div class="field">
-      <%= nested_form.label :last_name %>
-      <%= nested_form.text_field :last_name, class: "medium-input" %>
-    </div>
-
-    <div class="col-12">
-      <%= nested_form.label :homonym %>
-      <%= nested_form.text_area :homonym, rows: 2, class: "medium-textarea" %>
-    </div>
-    
-    <div class="col-12">
-      <%= nested_form.label :note %>
-      <%= nested_form.text_area :note, rows: 6, class: "medium-textarea" %>
-    </div>
+  </div> <!-- Nested Form Emails end -->
 
 
-    <div data-controller="nested-form" class="col-12"> <!-- Nested Form Telephones start -->
-      <%= nested_form.label :telephones %>
-
-          <!-- Creiamo nuovo Record -->
-          <template data-target="nested-form.template">
-            <%= nested_form.fields_for :telephones, Telephone.new, child_index: "TEMPLATE_RECORD" do |telephone| %>
-              <%= render "telephone_fields", form: telephone %>
-            <% end %>
-          </template>
-      
-          <!-- Visualizziamo i Records esistenti -->
-          <%= nested_form.fields_for :telephones do |telephone| %>
-            <%= render "telephone_fields", form: telephone %>
-          <% end %>
-
-          <!-- Il pulsante per aggiungere i tasks -->
-          <div data-target="nested-form.add_item">
-              <%= link_to "+ Aggiungi numero di telefono personale", "#", data: { action: "nested-form#add_association" }, class: "btn btn-transparent-dark-gray btn-medium margin-20px-bottom" %>
-              <%#= link_to "Add Telephone", "#", 'data-action': "nested-form#add_association" %>
-          </div>
-        </div> <!-- Nested Form Telephones end -->
-
-
-        <div data-controller="nested-form" class="col-12"> <!-- Nested Form Emails start -->
-          <!-- Creiamo nuovo Record -->
-          <template data-target="nested-form.template">
-            <%= nested_form.fields_for :emails, Email.new, child_index: "TEMPLATE_RECORD" do |email| %>
-              <%= render "email_fields", form: email %>
-            <% end %>
-          </template>
-      
-          <!-- Visualizziamo i Records esistenti -->
-          <%= nested_form.fields_for :emails do |email| %>
-            <%= render "email_fields", form: email %>
-          <% end %>
-
-          <!-- Il pulsante per aggiungere i tasks -->
-          <div data-target="nested-form.add_item">
-              <%= link_to "+ Aggiungi indirizzo email personale", "#", data: { action: "nested-form#add_association" }, class: "btn btn-transparent-dark-gray btn-medium margin-20px-bottom" %>
-              <%#= link_to "Add Telephone", "#", 'data-action': "nested-form#add_association" %>
-          </div>
-        </div> <!-- Nested Form Emails end -->
-
-
-  <% end %>
-  
-  
 
   <div class="actions">
     <%= form.submit %>

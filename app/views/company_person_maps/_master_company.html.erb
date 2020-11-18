@@ -15,7 +15,10 @@
                   <%= link_to edit_company_path(company), class: "text-extra-dark-gray text-uppercase alt-font font-weight-600 text-small" do %>
                     <%= company.name %> - <%= company.building %> - <%= company.id %> (Cliente)
                   <% end %>
-                  <p><%= company.address %> Centralino: 1234567899  Email: info@peroni.it</p>
+                  
+                  <p><%= company.address %> | <%= h_company_telefones_all(company.telephones) %> | Email: info@peroni.it</p>
+
+                  <!--<p><%#= company.address %> | <%#= "#{company.telephones.first.name}: #{company.telephones.first.prefix} #{company.telephones.first.number} " if company.telephones.first.present? %> | Email: info@peroni.it</p>-->
                   <div><%= company.note %></div>
                   <div class="text-small text-medium-gray text-uppercase margin-10px-bottom">17 july 2020, 6:05 pm</div>
                 </div>

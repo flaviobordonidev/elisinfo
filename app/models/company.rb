@@ -12,7 +12,10 @@ class Company < ApplicationRecord
   ## enum
   enum client_type: {c_none: 0, c_goods: 1, c_services: 2, c_goods_and_services: 3}
   enum supplier_type: {s_none: 0, s_goods: 1, s_services: 2, s_goods_and_services: 3}
-  
+
+  ## Active Storage
+  has_one_attached :logo_image
+    
   # == Relationships ========================================================
 
   ## nested-forms + polymorphic

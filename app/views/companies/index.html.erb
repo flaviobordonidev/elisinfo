@@ -59,7 +59,14 @@
             <li>
               <div class="display-table width-100">
                 <div class="display-table-cell width-100px xs-width-50px text-center vertical-align-top xs-display-block xs-margin-10px-bottom">
-                  <%= image_tag "pofo/logo_peroni.png", class: "img-circle width-85 xs-width-100", alt: "" %>
+                  
+                  
+                  <% if company.logo_image.attached? %>
+                    <%= image_tag company.logo_image.variant(resize: "100x100") %>
+                  <% else %>
+                    <%= image_tag "pofo/logo_peroni.png", class: "img-circle width-85 xs-width-100", alt: "" %>
+                  <% end %>
+
                 </div>
                 <div class="padding-40px-left display-table-cell vertical-align-top last-paragraph-no-margin xs-no-padding-left xs-display-block">
                   <%= link_to edit_company_path(company), class: "text-extra-dark-gray text-uppercase alt-font font-weight-600 text-small" do %>
