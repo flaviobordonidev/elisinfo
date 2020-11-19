@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   resources :company_person_maps
   resources :people
-  resources :companies
+  resources :companies do
+    member do
+      delete :delete_image_attachment
+    end
+  end
+  
   resources :todo_lists
   root 'pages#home'
 
