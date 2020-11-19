@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_090057) do
+ActiveRecord::Schema.define(version: 2020_11_19_142347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -180,6 +180,15 @@ ActiveRecord::Schema.define(version: 2020_10_13_090057) do
     t.string "title"
     t.index ["locale"], name: "index_person_translations_on_locale"
     t.index ["person_id"], name: "index_person_translations_on_person_id"
+  end
+
+  create_table "socials", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.integer "socialable_id"
+    t.string "socialable_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tasks", force: :cascade do |t|
